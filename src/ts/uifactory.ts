@@ -45,6 +45,8 @@ import { UIConditionContext, UIManager } from './uimanager';
 import { UIConfig } from './uiconfig';
 import { PlayerAPI } from 'bitmovin-player';
 import { i18n } from './localization/i18n';
+import {RewindButton} from "./components/rewindbutton";
+import {ForwardButton} from "./components/forwardbutton";
 
 export namespace UIFactory {
 
@@ -120,7 +122,9 @@ export namespace UIFactory {
         }),
         new Container({
           components: [
+            new RewindButton(),
             new PlaybackToggleButton(),
+            new ForwardButton({interval:20}),
             new VolumeToggleButton(),
             new VolumeSlider(),
             new Spacer(),
